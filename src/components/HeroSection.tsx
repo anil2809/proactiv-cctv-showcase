@@ -1,54 +1,18 @@
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import CCTVCanvas from "./CCTVCanvas";
+import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon } from "lucide-react";
 
-const textVariants = {
-  hidden: { opacity: 0 },
-  visible: (i: number) => ({
-    opacity: 1,
-    transition: {
-      delay: i * 0.1,
-    },
-  }),
-};
-
-const words = ["Secure", "Protect", "Monitor", "Safeguard"];
-
 const HeroSection = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       <div className="aurora-bg"></div>
       <div className="absolute inset-0 noise-bg opacity-20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-      
-      <svg width="0" height="0" className="absolute">
-        <filter id="gooey">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-          <feColorMatrix
-            values="
-              1 0 0 0 0
-              0 1 0 0 0
-              0 0 1 0 0
-              0 0 0 30 -11
-            "
-          />
-        </filter>
-      </svg>
       
       <div className="absolute top-4 right-4 z-50">
         <Button 
@@ -75,25 +39,13 @@ const HeroSection = () => {
               </span>
             </motion.div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white light:text-gray-900">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentWordIndex}
-                  className="gooey-text inline-block text-gradient mr-2"
-                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, filter: "blur(10px)" }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {words[currentWordIndex]}
-                </motion.span>
-              </AnimatePresence>
-              Your Property With
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white text-gray-900">
+              Protect Your Property With
               <span className="text-gradient"> Advanced CCTV</span> Solutions
             </h1>
             
             <motion.p 
-              className="text-lg dark:text-white/70 light:text-gray-700 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg dark:text-white/70 text-gray-700 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -115,7 +67,7 @@ const HeroSection = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="dark:border-white/10 dark:hover:bg-white/5 dark:text-white light:border-gray-300 light:text-gray-800 light:hover:bg-gray-100 text-lg px-8 py-6"
+                className="dark:border-white/10 dark:hover:bg-white/5 dark:text-white border-gray-300 text-gray-800 hover:bg-gray-100 text-lg px-8 py-6"
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Learn More
@@ -130,17 +82,17 @@ const HeroSection = () => {
             >
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">500+</span>
-                <span className="text-sm dark:text-white/70 light:text-gray-600">Projects Completed</span>
+                <span className="text-sm dark:text-white/70 text-gray-600">Projects Completed</span>
               </div>
-              <div className="h-12 w-px dark:bg-white/10 light:bg-gray-200"></div>
+              <div className="h-12 w-px dark:bg-white/10 bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">98%</span>
-                <span className="text-sm dark:text-white/70 light:text-gray-600">Customer Satisfaction</span>
+                <span className="text-sm dark:text-white/70 text-gray-600">Customer Satisfaction</span>
               </div>
-              <div className="h-12 w-px dark:bg-white/10 light:bg-gray-200"></div>
+              <div className="h-12 w-px dark:bg-white/10 bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">24/7</span>
-                <span className="text-sm dark:text-white/70 light:text-gray-600">Support</span>
+                <span className="text-sm dark:text-white/70 text-gray-600">Support</span>
               </div>
             </motion.div>
           </div>
@@ -152,9 +104,11 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 z-10">
-                <CCTVCanvas />
-              </div>
+              <img 
+                src="/images/cctv-1.jpg" 
+                alt="CCTV Security System" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
               
@@ -162,9 +116,9 @@ const HeroSection = () => {
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs dark:text-white/70 light:text-gray-600">Interactive 3D Model</span>
+                    <span className="text-xs dark:text-white/70 text-gray-600">HD Security Camera</span>
                   </div>
-                  <h3 className="dark:text-white light:text-gray-800 font-medium mt-1">Advanced CCTV System</h3>
+                  <h3 className="dark:text-white text-gray-800 font-medium mt-1">Advanced CCTV System</h3>
                 </div>
               </div>
             </div>

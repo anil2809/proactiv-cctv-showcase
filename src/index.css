@@ -167,32 +167,6 @@
   width: 100%;
 }
 
-/* Light/Dark theme specific text adjustments */
-.light .text-white {
-  @apply text-gray-800;
-}
-
-.light .text-white\/70 {
-  @apply text-gray-600;
-}
-
-.light .bg-white\/5 {
-  @apply bg-gray-100;
-}
-
-.light .border-white\/10 {
-  @apply border-gray-200;
-}
-
-/* Fix for dark theme visibility */
-.dark .text-gray-800 {
-  @apply text-white;
-}
-
-.dark .text-gray-600 {
-  @apply text-white/70;
-}
-
 /* Theme transition */
 html.light body, 
 html.dark body {
@@ -222,4 +196,52 @@ html.dark body {
   .md\:grid-cols-2 {
     grid-template-columns: 1fr;
   }
+}
+
+/* Improved mobile responsiveness */
+@media (max-width: 480px) {
+  .container {
+    @apply px-3;
+  }
+  
+  .text-4xl {
+    @apply text-2xl;
+  }
+  
+  .text-3xl {
+    @apply text-xl;
+  }
+  
+  .text-2xl {
+    @apply text-lg;
+  }
+}
+
+/* Better light theme text visibility */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  @apply text-gray-900;
+}
+
+.light p {
+  @apply text-gray-700;
+}
+
+.light .text-white {
+  @apply text-gray-900;
+}
+
+.light .text-white\/70 {
+  @apply text-gray-700;
+}
+
+.light .text-white\/60 {
+  @apply text-gray-600;
+}
+
+.light .bg-white\/5 {
+  @apply bg-gray-100/80;
+}
+
+.light .border-white\/10 {
+  @apply border-gray-200;
 }
