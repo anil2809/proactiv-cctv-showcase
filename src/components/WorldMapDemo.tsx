@@ -8,9 +8,9 @@ export default function WorldMapDemo() {
     <div className="py-20 dark:bg-transparent bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-bold text-xl md:text-4xl dark:text-white text-gray-900">
-          Remote{" "}
+          Global{" "}
           <span className="text-neutral-400">
-            {"Connectivity".split("").map((word, idx) => (
+            {"Monitoring".split("").map((word, idx) => (
               <motion.span
                 key={idx}
                 className="inline-block"

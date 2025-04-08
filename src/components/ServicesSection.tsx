@@ -38,7 +38,7 @@ const ServicesSection = () => {
             Services
           </motion.h2>
           <motion.h3 
-            className="text-3xl md:text-4xl font-bold mb-6 dark:text-white light:text-gray-900"
+            className="text-3xl md:text-4xl font-bold mb-6 dark:text-white text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -76,6 +76,7 @@ const ServicesSection = () => {
                 "Night vision capability",
               ]}
               popular
+              imageUrl="public/lovable-uploads/07b257da-ef06-455f-9c01-2eb85ffdbbe9.png"
             />
           </motion.div>
 
@@ -90,6 +91,7 @@ const ServicesSection = () => {
                 "Integration with access control",
                 "Video analytics",
               ]}
+              imageUrl="public/lovable-uploads/922130a7-fc7d-4600-a1f9-aceed7a6e9e1.png"
             />
           </motion.div>
 
@@ -104,6 +106,7 @@ const ServicesSection = () => {
                 "Software updates",
                 "Quick repair response",
               ]}
+              imageUrl="public/lovable-uploads/c179ee3d-6366-4175-be59-86474f65a2fa.png"
             />
           </motion.div>
 
@@ -118,6 +121,7 @@ const ServicesSection = () => {
                 "Custom security planning",
                 "Budget-friendly options",
               ]}
+              imageUrl="public/lovable-uploads/4c48274f-2b46-4c99-96ad-c203f835ad97.png"
             />
           </motion.div>
 
@@ -132,6 +136,7 @@ const ServicesSection = () => {
                 "Emergency response coordination",
                 "Activity reporting",
               ]}
+              imageUrl="public/lovable-uploads/98933fe9-1ee8-4198-b9df-d0c03c9289c9.png"
             />
           </motion.div>
 
@@ -146,6 +151,7 @@ const ServicesSection = () => {
                 "Low-light environments",
                 "License plate recognition",
               ]}
+              imageUrl="public/lovable-uploads/b8b5fb83-bae9-4684-baff-49179dc7effa.png"
             />
           </motion.div>
         </motion.div>

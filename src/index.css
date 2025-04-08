@@ -245,3 +245,26 @@ html.dark body {
 .light .border-white\/10 {
   @apply border-gray-200;
 }
+
+/* Navbar light theme improvements */
+.light .tubelight::before {
+  box-shadow: 0 0 8px 1px hsl(var(--primary));
+}
+
+.light .tubelight.active::before,
+.light .tubelight:hover::before {
+  background-color: hsl(var(--primary));
+}
+
+/* Testimonial text visibility fixes */
+.light .testimonial-content {
+  @apply text-gray-800;
+}
+
+.light .testimonial-author {
+  @apply text-gray-900;
+}
+
+.light .testimonial-role {
+  @apply text-gray-600;
+}

@@ -114,7 +114,7 @@ const TestimonialsSection = () => {
                 exit="exit"
                 className="absolute inset-0 flex flex-col items-center justify-center"
               >
-                <div className="bg-white/5 dark:backdrop-blur-md backdrop-blur-lg border dark:border-white/10 border-gray-200 rounded-xl p-8 w-full max-w-2xl relative dark:bg-black/10 bg-white/80">
+                <div className="bg-white/90 dark:bg-black/20 dark:backdrop-blur-md backdrop-blur-lg border dark:border-white/10 border-gray-200 rounded-xl p-8 w-full max-w-2xl relative">
                   <Quote className="absolute top-8 left-8 h-12 w-12 text-primary opacity-20" />
                   
                   <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
