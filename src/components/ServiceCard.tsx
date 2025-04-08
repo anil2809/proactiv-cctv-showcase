@@ -3,6 +3,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { LucideIcon } from "lucide-react";
+import Image from "next/image";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -10,6 +11,7 @@ interface ServiceCardProps {
   description: string;
   features: string[];
   popular?: boolean;
+  imageUrl?: string;
 }
 
 const ServiceCard = ({
@@ -18,6 +20,7 @@ const ServiceCard = ({
   description,
   features,
   popular,
+  imageUrl,
 }: ServiceCardProps) => {
   return (
     <div
@@ -34,14 +37,20 @@ const ServiceCard = ({
         </Badge>
       )}
 
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+      {imageUrl && (
+        <div className="absolute inset-0 rounded-xl overflow-hidden z-0 opacity-10">
+          <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
+        </div>
+      )}
+
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary relative z-10">
         <Icon className="h-6 w-6" />
       </div>
 
-      <h3 className="mb-2 text-xl font-bold dark:text-white light:text-gray-900">{title}</h3>
-      <p className="mb-6 text-sm dark:text-white/70 light:text-gray-600">{description}</p>
+      <h3 className="mb-2 text-xl font-bold dark:text-white light:text-gray-900 relative z-10">{title}</h3>
+      <p className="mb-6 text-sm dark:text-white/70 light:text-gray-600 relative z-10">{description}</p>
 
-      <div className="mb-6 space-y-2">
+      <div className="mb-6 space-y-2 relative z-10">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
@@ -52,7 +61,7 @@ const ServiceCard = ({
 
       <Button
         variant="outline"
-        className="w-full dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-gray-200 light:hover:bg-primary light:hover:text-white"
+        className="w-full dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-gray-200 light:hover:bg-primary light:hover:text-white relative z-10"
       >
         Learn More
       </Button>
